@@ -1,0 +1,1103 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>5 Months of Us ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #0f0c29;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           OPENING SCREEN
+        ========================= */
+
+        .opening {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at top, #ff758c, transparent 40%),
+                linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opening-content {
+            z-index: 2;
+            padding: 25px;
+        }
+
+        .big-heart {
+            font-size: 90px;
+            animation: heartbeat 1.4s infinite;
+            filter: drop-shadow(0 0 25px #ff4d88);
+        }
+
+        .opening h1 {
+            font-size: 55px;
+            margin: 20px 0 10px;
+        }
+
+        .opening p {
+            font-size: 21px;
+            opacity: 0.9;
+        }
+
+        .start-btn {
+            margin-top: 30px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            color: #e83e73;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #ddd;
+            margin-bottom: 45px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline-section {
+            background: linear-gradient(180deg, #17132f, #241b42);
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: #ff6b9d;
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff6b9d;
+            box-shadow: 0 0 15px #ff6b9d;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-card {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.13);
+        }
+
+        .timeline-card h3 {
+            color: #ff8fb3;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           PHOTO GALLERY
+        ========================= */
+
+        .gallery-section {
+            background: #0d0b20;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .photo {
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: linear-gradient(135deg, #ff758c, #a18cd1);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .photo:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            font-weight: bold;
+        }
+
+        /* =========================
+           MEMORIES
+        ========================= */
+
+        .memories-section {
+            background: linear-gradient(135deg, #261735, #351c45);
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .memory-card {
+            padding: 30px 25px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.3s;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .memory-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .memory-card h3 {
+            margin-bottom: 12px;
+            color: #ffabc6;
+        }
+
+        .memory-card p {
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* =========================
+           ENVELOPE
+        ========================= */
+
+        .letter-section {
+            background: #100d24;
+            min-height: 700px;
+        }
+
+        .envelope-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .envelope {
+            width: 330px;
+            height: 220px;
+            position: relative;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        .envelope-body {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff6f91;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 165px solid transparent;
+            border-right: 165px solid transparent;
+            border-top: 120px solid #ff9ab3;
+            top: 0;
+            left: 0;
+            transform-origin: top;
+            transition: 0.8s;
+            z-index: 4;
+        }
+
+        .letter {
+            position: absolute;
+            width: 280px;
+            height: 190px;
+            background: #fffafc;
+            color: #333;
+            left: 25px;
+            top: 20px;
+            padding: 25px;
+            border-radius: 5px;
+            transition: 0.8s;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .letter h3 {
+            color: #e64b77;
+            margin-bottom: 12px;
+        }
+
+        .letter p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope.open .letter {
+            transform: translateY(-150px);
+            height: 300px;
+            z-index: 5;
+        }
+
+        .tap-text {
+            margin-top: 25px;
+            color: #ffabc6;
+        }
+
+        /* =========================
+           FINAL SURPRISE
+        ========================= */
+
+        .final-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(circle, #5c1743, #160b29 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-content {
+            max-width: 750px;
+            z-index: 2;
+        }
+
+        .final-content h2 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .final-content p {
+            font-size: 21px;
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        .final-heart {
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        .signature {
+            margin-top: 35px;
+            font-size: 24px;
+            color: #ff9fbd;
+        }
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-heart {
+            position: fixed;
+            bottom: -40px;
+            font-size: 25px;
+            pointer-events: none;
+            animation: floatUp linear forwards;
+            z-index: 100;
+        }
+
+        /* =========================
+           PHOTO MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 15px;
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 700px) {
+
+            .opening h1 {
+                font-size: 38px;
+            }
+
+            .big-heart {
+                font-size: 70px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 45px;
+                padding-right: 5px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 5px;
+                right: auto;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 320px;
+            }
+
+            .final-content h2 {
+                font-size: 38px;
+            }
+
+            .final-content p {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         OPENING
+    ========================= -->
+
+    <div class="opening">
+
+        <div class="opening-content">
+
+            <div class="big-heart">❤️</div>
+
+            <h1>Happy 5 Months</h1>
+
+            <p>
+                To the girl who made these five months special...
+            </p>
+
+            <button class="start-btn"
+                    onclick="document.getElementById('timeline').scrollIntoView()">
+
+                Start Our Story 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
+
+    <section class="timeline-section" id="timeline">
+
+        <h2 class="section-title">
+            Our 5-Month Journey ❤️
+        </h2>
+
+        <p class="section-subtitle">
+            Five months. Countless memories. One beautiful story.
+        </p>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Month 1 🌸</h3>
+
+                    <p>
+                        The beginning of something beautiful.
+                        Everything felt new, exciting and a little magical.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Month 2 💕</h3>
+
+                    <p>
+                        We started understanding each other better
+                        and creating our own little world.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Month 3 🥹</h3>
+
+                    <p>
+                        More conversations, more laughter,
+                        more memories and more reasons to smile.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Month 4 ✨</h3>
+
+                    <p>
+                        By now, the little things started becoming
+                        some of my favorite things about us.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <h3>Month 5 ❤️</h3>
+
+                    <p>
+                        And here we are...
+                        five months of us, and hopefully
+                        countless more chapters to come.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHOTO GALLERY
+    ========================= -->
+
+    <section class="gallery-section">
+
+        <h2 class="section-title">
+            Our Little Gallery 📸
+        </h2>
+
+        <p class="section-subtitle">
+            Some moments I would happily relive again and again.
+        </p>
+
+
+        <div class="gallery">
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo1.jpg" alt="Our memory">
+
+                <span>Our first memory ❤️</span>
+
+            </div>
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo2.jpg" alt="Our memory">
+
+                <span>That beautiful day ✨</span>
+
+            </div>
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo3.jpg" alt="Our memory">
+
+                <span>Just us 💕</span>
+
+            </div>
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo4.jpg" alt="Our memory">
+
+                <span>One of my favorites 🥹</span>
+
+            </div>
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo5.jpg" alt="Our memory">
+
+                <span>Another beautiful memory 🌸</span>
+
+            </div>
+
+
+            <div class="photo" onclick="openPhoto(this)">
+
+                <img src="photo6.jpg" alt="Our memory">
+
+                <span>Five months of us ❤️</span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================= -->
+
+    <section class="memories-section">
+
+        <h2 class="section-title">
+            Our Memories 💭
+        </h2>
+
+        <p class="section-subtitle">
+            The little things that make our story ours.
+        </p>
+
+
+        <div class="memory-grid">
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    😂
+                </div>
+
+                <h3>Our Silly Moments</h3>
+
+                <p>
+                    The random conversations, stupid jokes,
+                    teasing and moments where we couldn't stop laughing.
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    💬
+                </div>
+
+                <h3>Our Conversations</h3>
+
+                <p>
+                    From meaningful talks to completely random
+                    conversations that somehow lasted forever.
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    🥹
+                </div>
+
+                <h3>Our Favorite Moments</h3>
+
+                <p>
+                    Some moments don't need to be grand.
+                    Sometimes simply being together is enough.
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    🌙
+                </div>
+
+                <h3>Late Night Talks</h3>
+
+                <p>
+                    Those conversations that somehow made
+                    the night disappear way too quickly.
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    🫶
+                </div>
+
+                <h3>The Little Things</h3>
+
+                <p>
+                    Every small gesture, every smile,
+                    every "take care" and every little moment.
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="memory-icon">
+                    ❤️
+                </div>
+
+                <h3>Us</h3>
+
+                <p>
+                    The best part isn't a particular memory.
+                    It's the fact that we got to make them together.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOVE LETTER
+    ========================= -->
+
+    <section class="letter-section">
+
+        <h2 class="section-title">
+            I Have Something To Tell You 💌
+        </h2>
+
+        <p class="section-subtitle">
+            Tap the envelope...
+        </p>
+
+
+        <div class="envelope-container">
+
+            <div class="envelope" onclick="openEnvelope(this)">
+
+                <div class="envelope-body"></div>
+
+                <div class="letter">
+
+                    <h3>To My Favorite Person ❤️</h3>
+
+                    <p>
+
+                        Five months ago, we started writing
+                        a little chapter together.
+
+                        <br><br>
+
+                        Since then, you've become someone
+                        incredibly special to me.
+
+                        <br><br>
+
+                        Thank you for every laugh,
+                        every conversation, every memory
+                        and every little moment.
+
+                        <br><br>
+
+                        I don't know exactly what the future
+                        has planned for us...
+
+                        <br><br>
+
+                        But I'm really happy that
+                        you're a part of my present.
+
+                        <br><br>
+
+                        Happy 5 Months ❤️
+
+                    </p>
+
+                </div>
+
+                <div class="envelope-flap"></div>
+
+            </div>
+
+        </div>
+
+
+        <p class="tap-text">
+            💌 Tap again to close the letter
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL SURPRISE
+    ========================= -->
+
+    <section class="final-section">
+
+        <div class="final-content">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <h2>
+                Five Months Down...
+            </h2>
+
+            <p>
+
+                ...and I hope this is only the beginning
+                of many more beautiful memories.
+
+                <br><br>
+
+                Thank you for being you.
+
+                <br><br>
+
+                Happy 5 Month Anniversary,
+                my favorite person. 🥹❤️
+
+            </p>
+
+            <div class="signature">
+
+                With lots of love ❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHOTO MODAL
+    ========================= -->
+
+    <div class="modal" id="photoModal" onclick="closePhoto()">
+
+        <div class="close">
+            ×
+        </div>
+
+        <img id="modalImage" src="" alt="Memory">
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           ENVELOPE
+        ========================= */
+
+        function openEnvelope(element) {
+
+            element.classList.toggle("open");
+
+        }
+
+
+        /* =========================
+           PHOTO GALLERY
+        ========================= */
+
+        function openPhoto(element) {
+
+            const image =
+                element.querySelector("img");
+
+            document.getElementById("modalImage").src =
+                image.src;
+
+            document.getElementById("photoModal").style.display =
+                "flex";
+
+        }
+
+
+        function closePhoto() {
+
+            document.getElementById("photoModal").style.display =
+                "none";
+
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            const hearts = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💘",
+                "💓"
+            ];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (Math.random() * 3 + 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 7000);
+
+        }
+
+
+        setInterval(createHeart, 600);
+
+
+    </script>
+
+
+</body>
+</html>
+```
